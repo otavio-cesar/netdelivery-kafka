@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Net.Delivery.Order.Notifier/bin/Debug/net8.0/Net.Delivery.Order.Notifier.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "envFile": "${workspaceFolder}/Net.Delivery.Order.Notifier/.env",
+        },
+        {
+            "name": ".NET Core Launch (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Net.Delivery.Order.Api/bin/Debug/net8.0/Net.Delivery.Order.Api",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "envFile": "${workspaceFolder}/Net.Delivery.Order.Api/.env",
+        },
+    ]
+}

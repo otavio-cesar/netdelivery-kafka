@@ -4,11 +4,35 @@ Este repositório contém o código fonte relacionado ao módulo "Desenvolviment
 
 ## Descrição do Módulo
 
-Neste módulo, os participantes serão guiados através do desenvolvimento de uma aplicação prática que implementa a arquitetura proposta utilizando o Apache Kafka em conjunto com o framework .NET Core. Eles aprenderão como integrar o Kafka em suas aplicações .NET Core e como implementar produtores e consumidores de mensagens Kafka para comunicação assíncrona e distribuída.
+Aplicação que implementa o Apache Kafka em conjunto com o framework .NET Core. Como integrar o Kafka em suas aplicações .NET Core e como implementar produtores e consumidores de mensagens Kafka para comunicação assíncrona e distribuída.
 
-## Como Executar o Projeto
+## Como Iniciar o Kafka e Zookeeper com o Docker Compose
 
-1. Clone este repositório em sua máquina local:
+1. Rode os containers usando o arquivo docker compose:
 
    ```bash
-   git clone https://github.com/balduinoman/netdelivery.git
+   docker-compose up -d
+2. Visualize os container rodando:
+
+   ```bash
+   docker ps
+3. Entrar dentro do container kafka:
+
+   ```bash
+   sudo docker exec -it kafka /bin/bash
+4. Listar tópicos:
+
+   ```bash
+   kafka-topics --list --bootstrap-server localhost:9092
+5. Criar tópico:
+
+   ```bash
+   kafka-topics --create --bootstrap-server localhost:9002 --replication-factor 1 --partitions 1 --topic tp-order
+5. Consumir tópico:
+
+   ```bash
+   kafka-console-consumer  --bootstrap-server localhost:9092 --topic tp-order --from-be
+   ginning
+## Como executar o produtor (fazer pedido) e consumidor (notificar pedido)
+
+1. Vá na aba Run/Debug do VSCODE e execute os dois projetos (Consolse e Api):
